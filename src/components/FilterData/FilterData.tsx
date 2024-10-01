@@ -1,6 +1,10 @@
+import style from './filterData.module.css'
+
 const FilterData = () => {
 	return (
-		<nav></nav>
+		<nav className={style.filter}>
+
+		</nav>
 	);
 }
  
