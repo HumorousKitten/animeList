@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 import { IAnimeData } from '../../../types/types'
 import style from './animeCard.module.css'
 
@@ -14,7 +14,6 @@ interface IAnimeCardProps {
 
 
 const AnimeCard: FC<IAnimeCardProps> = ({data}) => {
-	console.log(data)
 	return (
 		<div className={style.animeCard}>
 			<div className={style.cardImage}>

@@ -1,13 +1,6 @@
-/* .main {
-	display: grid;
-	grid-template-columns: 1fr 300px;
-	border: 3px solid green;
-} */
-
 .content {
 	display: flex;
 	gap: 1.25rem;
-	height: 100svh;
 	min-height: 100%;
 }
 
