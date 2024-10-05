@@ -1,17 +1,13 @@
 import { Navigate, useParams } from 'react-router-dom'
-import { IAnimeData } from '../../types/types'
-import React from 'react'
-import axios from 'axios'
+import React, { FC } from 'react'
+import Content from '../../components/contentCardPage/Content'
 
 type TQueryParam = {
 	animeCardId: string
 }
 
-interface IData {
-	data: IAnimeData
-}
 
-const AnimeCardPage = () => {
+const AnimeCardPage: FC = () => {
 	const { animeCardId } = useParams<TQueryParam>()
 	const [invalidId, setInvalidId] = React.useState<boolean>(false)
 	
@@ -21,26 +17,17 @@ const AnimeCardPage = () => {
 			return
 		}
 
-		if(animeCardId) getAnimeById(+animeCardId)
 	}, [])
 	
-	async function getAnimeById(id: number) {
-		const data: IData = (
-			await axios.get<IData>(
-				`https://api.jikan.moe/v4/anime/${id}`
-			)
-		).data
-
-		console.log(data.data)
-	}
-
 	if (invalidId) {
 		return <Navigate to={'/404'} />
 	}
 
 
 
-	return <h1>Hello!</h1>
+	return (
+		<Content animeCardId = {animeCardId}/>
+	)
 }
 
 export default AnimeCardPage
