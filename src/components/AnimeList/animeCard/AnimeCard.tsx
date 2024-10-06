@@ -15,7 +15,6 @@ interface IAnimeCardProps {
 
 //'/animeList/animeCard?id=:animeCardId'
 const AnimeCard: FC<IAnimeCardProps> = ({data}) => {
-	console.log(data)
 	return (
 		<div className={style.animeCard}>
 			<Link to={`/animeList/animeCardId/${data.mal_id}`}>

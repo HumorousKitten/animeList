@@ -3,32 +3,74 @@
 	margin-inline: auto;
 }
 
-@media screen and (min-width: 36rem){
+.animeInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.leftInfoBlock {
+	margin: auto;
+}
+
+.rightInfoBlock {
+	padding: .94rem;
+	color: #fff;
+}
+
+.scores p:first-child span{
+	margin-left: 0.31rem;
+}
+
+.increaseScore {
+	font-size: 1.5rem;
+}
+
+.favorites {
+	margin-left: 1.56rem;
+}
+
+.defaultTitle {
+	font-size: 2.5rem;
+}
+
+.originalTitle{
+	font-size: .8rem;
+}
+
+.allAboutAnime {
+	margin-top: 20px;
+}
+
+.allAboutAnime p + p{
+	margin-top: 10px;
+}
+
+.trailerSection h3 {
+	color: #fff;
+	font-size: 1.88rem;
+	margin-bottom: 1.25rem;
+	padding: .94rem;
+}
+
+.trailerSection iframe{
+	width: 100%;
+	height: 70vh;
+}
+
+@media screen and (min-width: 768px) {
 	.container {
-		max-width: 33.75rem;
+		width: calc(100% - 5rem);
+		margin-inline: auto;
+	}
+	
+	.animeInfo {
+		display: grid;
+		grid-template-columns: 20% 1fr;
+	}
+
+	.leftInfoBlock {
+		margin: 0;
 	}
 }
 
-@media screen and (min-width: 48rem){
-	.container {
-		max-width: 45rem;
-	}
-}
 
-@media screen and (min-width: 62rem){
-	.container {
-		max-width: 60rem;
-	}
-}
-
-@media screen and (min-width:75rem){
-	.container {
-		max-width: 71.25rem;
-	}
-}
-
-@media screen and (min-width: 87.5rem){
-	.container {
-		max-width: 83.75rem;
-	}
-}

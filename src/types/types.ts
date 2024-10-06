@@ -23,11 +23,11 @@ type TDemographics = {
 	url?: string
 }
 
-type TGenres = TDemographics
-type TLicensors = TDemographics
-type TProducers = TDemographics
-type TStudios = TDemographics
-type TThemes = TDemographics
+type TGenres = TDemographics[]
+type TLicensors = TDemographics[]
+type TProducers = TDemographics[]
+type TStudios = TDemographics[]
+type TThemes = TDemographics[]
 
 type TImageExtension = {
 	image_url: string | null;
