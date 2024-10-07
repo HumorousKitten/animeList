@@ -1,10 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useImmer } from 'use-immer'
 import { Pagination } from '../../components/pagination/Pagination'
 import PaginationElement from '../../components/pagination/paginationElement/PaginationElement'
 import Select from '../../components/select/Select'
 import { useFavouritesStore } from '../../store/useFavouritesPage'
-import { useNavigate } from 'react-router-dom'
 import style from './favouritePage.module.css'
 
 type TSelectedOption = {
@@ -19,7 +19,8 @@ const FavouritePage = () => {
 		sortFavoriteDate,
 		sortFavoriteRating,
 	} = useFavouritesStore()
-	const [favourites, setFavourites] = React.useState(favouriteItems)
+
+	
 
 	const [selectedOption, updateSelectedOption] = useImmer<TSelectedOption>({
 		orderBy: '',
@@ -48,7 +49,6 @@ const FavouritePage = () => {
 		return () => window.removeEventListener('resize', handleResize)
 	}, [countItems])
 
-	console.log(favourites)
 
 	const VISIBLE_ELEMENTS: number = 4
 	let startPage = 1
@@ -84,16 +84,13 @@ const FavouritePage = () => {
 
 	React.useEffect(() => {
 		const { orderBy, sortBy } = selectedOption
-		console.log(orderBy)
-		console.log(sortBy)
+
 		if (!orderBy || !sortBy) return
 		if (orderBy === 'date') {
-			setFavourites(sortFavoriteDate(sortBy as 'asc' | 'desc', favouriteItems))
+			sortFavoriteDate(sortBy as 'asc' | 'desc')
 		}
 		if (orderBy === 'rating') {
-			setFavourites(
-				sortFavoriteRating(sortBy as 'asc' | 'desc', favouriteItems)
-			)
+			sortFavoriteRating(sortBy as 'asc' | 'desc')
 		}
 	}, [selectedOption.orderBy, selectedOption.sortBy])
 
@@ -101,7 +98,12 @@ const FavouritePage = () => {
 		<>
 			<header>
 				<div className={style.container}>
-					<h2 style={{color: '#fff', fontSize: '32px', cursor:'pointer'}} onClick={() => navigate('/')}>Главная</h2>
+					<h2
+						style={{ color: '#fff', fontSize: '32px', cursor: 'pointer' }}
+						onClick={() => navigate('/')}
+					>
+						Главная
+					</h2>
 				</div>
 			</header>
 			<main>
@@ -133,8 +135,8 @@ const FavouritePage = () => {
 				<section
 					className={`${style.container} ${style.favouriteAnimeSection}`}
 				>
-					{favourites
-						? favourites
+					{favouriteItems
+						? favouriteItems
 								.slice(startPosition, endPosition)
 								.map((item, index) => (
 									<div

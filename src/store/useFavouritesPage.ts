@@ -23,8 +23,8 @@ interface IUseFavouritesStore {
 	addFavourite: (item: IFavouriteItem) => void;
 	removeFavourite: (mal_id: number) => void;
 	isFavourite: (mal_id: number) => boolean;
-	sortFavoriteDate: (direction: 'asc' | 'desc', arr: IFavouriteItem[]) => IFavouriteItem[]
-	sortFavoriteRating: (direction: 'asc' | 'desc', arr: IFavouriteItem[]) => IFavouriteItem[]
+	sortFavoriteDate: (direction: 'asc' | 'desc') => IFavouriteItem[]
+	sortFavoriteRating: (direction: 'asc' | 'desc') => IFavouriteItem[]
 }
 
 export const useFavouritesStore = create<IUseFavouritesStore>()(
@@ -44,20 +44,24 @@ export const useFavouritesStore = create<IUseFavouritesStore>()(
         return favouriteItems.some(fav => fav.data.mal_id === mal_id);
       },
 
-			sortFavoriteDate: (direction: 'asc' | 'desc', arr) => {
-				return (direction === 'asc') ? [...arr].sort((a, b) => {
-					return a.date - b.date
-				}) : [...arr].sort((a, b) => {
-					return a.date - b.date
-				}).reverse()
+			sortFavoriteDate: (direction: 'asc' | 'desc') => {
+				set((state) => {
+					const sortedArray = [...state.favouriteItems].sort((a, b) => {
+						const dateA = new Date(a.date).getTime();
+						const dateB = new Date(b.date).getTime();
+						return direction === 'asc' ? dateA - dateB : dateB - dateA;
+					});
+					return { favouriteItems: sortedArray };
+				});
 			},
-
-			sortFavoriteRating: (direction: 'asc' | 'desc', arr) => {
-				return (direction === 'asc') ? [...arr].sort((a, b) => {
-					return a.rating - b.rating
-				}) : [...arr].sort((a, b) => {
-					return a.rating - b.rating
-				}).reverse()
+			
+			sortFavoriteRating: (direction: 'asc' | 'desc') => {
+				set((state) => {
+					const sortedArray = [...state.favouriteItems].sort((a, b) => {
+						return direction === 'asc' ? a.rating - b.rating : b.rating - a.rating;
+					});
+					return { favouriteItems: sortedArray };
+				});
 			}
     }),
     {
