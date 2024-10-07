@@ -65,12 +65,17 @@
 	
 	.animeInfo {
 		display: grid;
-		grid-template-columns: 20% 1fr;
+		grid-template-columns: auto 1fr;
 	}
 
 	.leftInfoBlock {
 		margin: 0;
 	}
+
+	.allAboutAnime {
+		width: 80ch;
+	}
+	
 }
 
 

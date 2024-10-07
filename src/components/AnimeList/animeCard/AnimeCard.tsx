@@ -30,7 +30,7 @@ const AnimeCard: FC<IAnimeCardProps> = ({data}) => {
 					</div>
 					<div className={style.score}>
 						<img src="/icons/star.svg" alt="scoreIcon" width={16}/>
-						<span>{data.score}</span>
+						<span>{data.score ? data.score : 0}</span>
 					</div>
 				</div>
 				<div className={style.animeTitles}>
