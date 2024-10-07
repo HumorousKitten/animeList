@@ -12,6 +12,34 @@
 	margin: auto;
 }
 
+.addFavourites {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.imageBlock {
+	margin-bottom: 0.5rem;
+}
+
+.ownScore {
+	display: flex;
+}
+
+.addFavouritesBtn {
+	background: #7EBBED;
+	padding: .6rem;
+	border-radius: .4rem;
+	color: #fff;
+}
+
+.removeFavouritesBtn {
+	background: #7EBBED;
+	padding: .6rem;
+	border-radius: .4rem;
+	color: #fff;
+}
+
 .rightInfoBlock {
 	padding: .94rem;
 	color: #fff;

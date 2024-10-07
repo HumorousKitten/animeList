@@ -64,7 +64,7 @@ interface IAnimeListProps {
 	updateFilter: Updater<TFilter>
 }
 
-const AnimeList: FC<IAnimeListProps> = ({ filter, updateFilter }) => {
+const AnimeList: FC<IAnimeListProps> = ({ filter }) => {
 	const [dataList, setDataList] = React.useState<IAnimeDataOnPage>({
 		data: [],
 		pagination: {
@@ -161,7 +161,7 @@ const AnimeList: FC<IAnimeListProps> = ({ filter, updateFilter }) => {
 	return (
 		<main className={style.main}>
 			<section className={style.listManagementSection}>
-				<button className={style.filter_btn} onClick={() => setIsMenu(true)}>
+				<button className={style.filter_btn} >
 					Filter
 				</button>
 

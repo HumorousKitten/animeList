@@ -1,7 +1,6 @@
 .main {
 	align-items: flex-start;
 	min-height: 100vh;
-	border: 1px solid green;
 	flex: 2 1 auto;
 }
 

@@ -1,0 +1,86 @@
+.container {
+	width: 100%;
+	margin-inline: auto;
+}
+
+.paginationList {
+	display: flex;
+	justify-content: center;
+	gap: .44rem;
+}
+
+.sortSection {
+	display: flex;
+	justify-content: center;
+}
+
+.sortSection select {
+	color: #fff;
+	font-size: 14px;
+	background: #1B1B1B;
+	padding: .31rem;
+}
+
+
+.sortSection select + select {
+	margin-left: 10px;
+}
+
+.favouriteAnimeSection {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+	justify-content: center;
+}
+
+.favouriteItem{
+	border: 1px solid #fff;
+	border-radius: 0 0 .63rem .63rem;
+	width: 100%;
+}
+
+.favouriteItemInfo {
+	color: #fff;
+	padding: .63rem .63rem .63rem 0;
+}
+
+.favouriteItemInfo  p{
+	width: 40ch;
+	padding: .31rem;
+}
+
+.favouriteItemInfo  p + p{
+	margin-top: 5px;
+}
+
+.favouriteItem iframe {
+	width: 100%;
+}
+.deleteBtn {
+	padding: .31rem;
+	background-color: #7EBBED;
+	border-radius: .31rem;
+}
+
+
+@media screen and (min-width: 577px) {
+	.container {
+		width: calc(100% - 5rem);
+		margin-inline: auto;
+	}
+
+	.favouriteItem{
+		width: auto;
+	}
+}
+
+/* @media screen and (min-width: 768px) {
+	.container {
+		width: calc(100% - 5rem);
+		margin-inline: auto;
+	}
+
+	.favouriteItem{
+		width: auto;
+	}
+} */
