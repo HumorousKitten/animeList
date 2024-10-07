@@ -1,5 +1,83 @@
-.filter {
-	border: 3px solid yellow;
-	padding: 30px;
-	flex: .5 1 auto;
+.nav_filter {
+	display: none;
+}
+
+@media screen and (min-width: 576px) {
+	.nav_filter {
+		display: block;
+		padding: 30px;
+		/* flex: 1 1 auto; */
+		flex-basis: 25rem;
+		color: #fff;
+	}
+	
+	.filter {
+		border: 1px solid  #483C32;
+		border-radius: 10px;
+		padding: 20px;
+	}
+	
+	.filter div + div {
+		margin-top: .63rem;
+	}
+	
+	
+	
+	.title {
+		font-size: 1.25rem;
+		margin-bottom: .63rem;
+		cursor: pointer;
+		border: 1px solid  #141413;
+		border-radius: 0.31rem;
+		padding: 5px;
+	}
+	
+	.genres div{
+		border: 1px solid black;
+		border-radius: 0.31rem;
+		padding: 0.31rem;
+		transition: background .5s linear;
+		animation: visible .5s linear forwards;
+		opacity: 0;
+		animation-delay: calc(0.1s * var(--i));
+	}
+	
+	.genres div input[type='checkbox']{
+		transform: scale(1.3);
+		cursor: pointer;
+	}
+	
+	.genres div input[type='radio']{
+		transform: scale(1.3);
+		cursor: pointer;
+	}
+	
+	.genres div label{
+		margin-left: 0.51rem;
+	}
+	
+	@keyframes visible {
+		0% {
+			display: none;
+			opacity: 0;
+		}
+	
+		50% {
+			display: block;
+			opacity: .5;
+		}
+	
+		100% {
+			display: block;
+			opacity: 1;
+		}
+	}
+	
+	.genres div:hover{
+		background: black;
+	}
+	
+	.genres div + div {
+		margin-top: 0.31rem;
+	}
 }

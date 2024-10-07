@@ -1,0 +1,109 @@
+.container {
+	width: 100%;
+	margin-inline: auto;
+}
+
+.animeInfo {
+	display: flex;
+	flex-direction: column;
+}
+
+.leftInfoBlock {
+	margin: auto;
+}
+
+.addFavourites {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.imageBlock {
+	margin-bottom: 0.5rem;
+}
+
+.ownScore {
+	display: flex;
+}
+
+.addFavouritesBtn {
+	background: #7EBBED;
+	padding: .6rem;
+	border-radius: .4rem;
+	color: #fff;
+}
+
+.removeFavouritesBtn {
+	background: #7EBBED;
+	padding: .6rem;
+	border-radius: .4rem;
+	color: #fff;
+}
+
+.rightInfoBlock {
+	padding: .94rem;
+	color: #fff;
+}
+
+.scores p:first-child span{
+	margin-left: 0.31rem;
+}
+
+.increaseScore {
+	font-size: 1.5rem;
+}
+
+.favorites {
+	margin-left: 1.56rem;
+}
+
+.defaultTitle {
+	font-size: 2.5rem;
+}
+
+.originalTitle{
+	font-size: .8rem;
+}
+
+.allAboutAnime {
+	margin-top: 20px;
+}
+
+.allAboutAnime p + p{
+	margin-top: 10px;
+}
+
+.trailerSection h3 {
+	color: #fff;
+	font-size: 1.88rem;
+	margin-bottom: 1.25rem;
+	padding: .94rem;
+}
+
+.trailerSection iframe{
+	width: 100%;
+	height: 70vh;
+}
+
+@media screen and (min-width: 768px) {
+	.container {
+		width: calc(100% - 5rem);
+		margin-inline: auto;
+	}
+	
+	.animeInfo {
+		display: grid;
+		grid-template-columns: auto 1fr;
+	}
+
+	.leftInfoBlock {
+		margin: 0;
+	}
+
+	.allAboutAnime {
+		width: 80ch;
+	}
+	
+}
+
+
