@@ -1,0 +1,5 @@
+.filter {
+	border: 3px solid yellow;
+	padding: 30px;
+	flex: .5 1 auto;
+}

@@ -1,0 +1,50 @@
+.animeCard {
+	display: flex;
+	flex-direction: column;
+}
+
+.cardImage {
+	position: relative;
+	overflow: hidden;
+}
+
+.score {
+	position: absolute;
+	background: yellow;
+
+	top: 2rem;
+
+	display: flex;
+	align-items: center;
+	font-weight: 600;
+	gap: 0.31rem;
+	padding: 5px;
+	border-radius: 0 0.625rem 0.625rem 0;
+}
+
+
+.cardImage .imageBlock{
+	max-width: 100%;
+	max-height: 100%;
+	padding-bottom: 140%;
+	margin: auto;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.animeTitles {
+	color: #c3c3c3;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.originalTitle {
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+
+.translateTitle {
+	font-size: 1.125rem;
+	font-weight: 600;
+}
